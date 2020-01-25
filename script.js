@@ -1,17 +1,17 @@
 const chips = document.getElementById('chips')
 const field = document.getElementById('field')
-var num = Number(chips.innerHTML)
-document.getElementById('chips').innerHTML = Number(chips.innerHTML)
+var num = Number(chips.innerHTML) || 15
 
 
 function chipsTwist (num) {
-    if (0 < num < 16) {
+    chips.innerHTML = Number(chips.innerHTML)
+
+    if ( - 1 < num < 16) {
         chips.addEventListener('click', function () {
             let div = document.createElement('div');
             field.appendChild(div);
             div.setAttribute("id", "chips-inner")
             div.setAttribute("class", "chips-inner")
-    
             function substractFromStack() {
                 num = num - 1
                 chips.innerHTML = num
@@ -21,7 +21,6 @@ function chipsTwist (num) {
         field.addEventListener('click', function (el) {
             let e = el.target
             if (e.id == 'chips-inner') e.remove();
-    
             function addToStack() {
                 if (e.id == 'chips-inner') {
                     num = num + 1
