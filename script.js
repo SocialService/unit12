@@ -2,29 +2,37 @@ const chips = document.getElementById('chips')
 const field = document.getElementById('field')
 var num = Number(chips.innerHTML) || 15
 
-chips.addEventListener('click', function () {
-    let div = document.createElement('div');
-    field.appendChild(div);
-    div.setAttribute("id", "chips-inner")
-    div.setAttribute("class", "chips-inner")
-    
-    function substractFromStack () {
-        num = num - 1
-        chips.innerHTML = num
-    }
-    substractFromStack()
-})
+if (num < 16) {
+    chips.addEventListener('click', function () {
+        let div = document.createElement('div');
+        field.appendChild(div);
+        div.setAttribute("id", "chips-inner")
+        div.setAttribute("class", "chips-inner")
 
-field.addEventListener('click', function (el) {
-    let e = el.target
-    if (e.id == 'chips-inner') e.remove();
+        function substractFromStack() {
+            num = num - 1
+            chips.innerHTML = num
+        }
+        substractFromStack()
+    })
 
-    function addToStack () {
-        num = num + 1
-        chips.innerHTLM = num
-    }
-    addToStack()
-})
+    field.addEventListener('click', function (el) {
+        let e = el.target
+        if (e.id == 'chips-inner') e.remove();
+
+        function addToStack() {
+            if (e.id == 'chips-inner') {
+                num = num + 1
+                chips.innerHTML = num
+            }
+        }
+        addToStack()
+    })
+
+} else {
+    console.log('Max 15 chips')
+}
+
 
 
 
