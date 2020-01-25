@@ -1,8 +1,9 @@
 const chips = document.getElementById('chips')
 const field = document.getElementById('field')
-let num = Number(chips.innerHTML) || 15
 
 function chipsTwist () {
+    let num = Number(chips.innerHTML) || 15
+
     if ( - 1 < num < 16) {
         chips.addEventListener('click', function () {
             let div = document.createElement('div');
@@ -30,7 +31,7 @@ function chipsTwist () {
         return console.log('Max 15 chips')
     }
 }
-chipsTwist()
+chipsTwist(chips)
 
 
 
@@ -92,7 +93,3 @@ chipsTwist()
 //         dragged.parentNode.removeChild( dragged );
 //         event.target.appendChild( dragged );
 //     }
-
-// }, false);
-// chips.innerHTML = n;
-// console.log("added")
