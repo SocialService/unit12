@@ -1,10 +1,8 @@
 const chips = document.getElementById('chips')
 const field = document.getElementById('field')
+let num = Number(chips.innerHTML) || 15
 
-
-function chipsTwist (num) {
-    var num = Number(chips.innerHTML) || 15
-
+function chipsTwist () {
     if ( - 1 < num < 16) {
         chips.addEventListener('click', function () {
             let div = document.createElement('div');
@@ -15,7 +13,7 @@ function chipsTwist (num) {
                 num = num - 1
                 chips.innerHTML = num
             }
-            substractFromStack(num)
+            substractFromStack()
         })
         field.addEventListener('click', function (el) {
             let e = el.target
