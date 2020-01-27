@@ -4,28 +4,26 @@ var counter = 15;
 
 
 chips.addEventListener('click', function () {
-    let div = document.createElement('div');
-    field.appendChild(div);
-    div.setAttribute("id", "chips-inner")
-    div.setAttribute("class", "chips-inner")
-
-    function substractFromStack() {
+    if (counter >= 1 && counter <= 15) {
         counter = counter - 1
+        let div = document.createElement('div');
+        field.appendChild(div);
+        div.setAttribute("id", "chips-inner")
+        div.setAttribute("class", "chips-inner")
         chips.innerHTML = counter
+    } else {
+        console.log('counter not in sfram')
     }
-    substractFromStack()
 })
 field.addEventListener('click', function (el) {
-    let e = el.target
-    if (e.id == 'chips-inner') e.remove();
-
-    function addToStack() {
-        if (e.id == 'chips-inner') {
-            counter = counter + 1
-            chips.innerHTML = counter
-        }
+    if (counter >= 0 && counter <= 14) {
+        counter = counter + 1
+        chips.innerHTML = counter
+        let e = el.target
+        if (e.id == 'chips-inner') e.remove();
+    } else {
+        console.log('counter not in sfram')
     }
-    addToStack()
 })
 
 
