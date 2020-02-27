@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <title>Web</title>
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="player">
-        Player 1
-    </div>
-    <div class="chips" id='chips'  draggable="true">
-        15
-    </div>
-    <div class="field" id='field'>
-    </div>
-</div>
+    <h1> Нарды</h1>
+    <div id="root"></div>
+    <div id="dico"><span>First player <div id="first-player"></div></span>   <span>Second player <div id="second-player"></div></span>        </div>
+
 
     <script src="script.js"></script>
 
+    <style>
+        table td {
+            border: red solid 2px;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            display: block;
+            float: left;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 60px;
+        }
+
+        input {
+            width: 40%;
+        }
+
+        button {
+            width: 20%;
+        }
+
+        circle{
+            border: 3px solid red;
+            width: 40px;
+            height: 40px;
+        }
+        .active {
+          opacity: 50%;
+        }
+
+        .chips-black .chips-white  {
+            border-radius: 50%;
+            border: 3px solid red;
+            width: 48px;
+            height: 48px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .chips-black {
+            background-color: black;
+            color: white;
+            font-size: 17pt;
+            border-radius: 50%;
+            border: 3px solid #908e8e;
+        }
+
+        .chips-white  {
+              background-color: red;
+              color: white;
+              font-size: 17pt;
+              border-radius: 50%;
+              border: 3px solid #908e8e;
+          }
+
+        #root {
+            width: 900px;
+            background-color: azure;
+        }
+    </style>
 </body>
+
 </html>
